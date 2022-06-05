@@ -21,8 +21,13 @@ const Main = () => (
     </BrowserRouter>
 );
 
+let Root;
 export const MountStorage = (selector: string) => {
-    ReactDOM.createRoot(document.getElementById(selector)).render(<Main />);
+    Root = ReactDOM.createRoot(document.getElementById(selector));
+    Root.render(<Main />);
+};
+export const UnMountStorage = () => {
+    Root.unmount();
 };
 
 export default Main;
