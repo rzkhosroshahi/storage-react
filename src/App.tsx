@@ -1,5 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import Main from "./Main";
 
-ReactDOM.render(<Main />, document.getElementById("storage-app"));
+ReactDOM.createRoot(document.getElementById("storage-app")).render(<Main />)
+

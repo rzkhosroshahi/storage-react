@@ -1,16 +1,28 @@
 import React from "react";
-import ReactDOM from "react-dom";
-
+import ReactDOM from "react-dom/client";
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Home from './Home';
+import Bucket from './Bucket';
+import Help from './Help';
 import "./index.scss";
 
 const Main = () => (
-  <div className="text-2xl">
-    <h2>Storage ReactJs App</h2>
-  </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/storage" element={<Home />}>
+                <Route path="bucket" element={<Bucket />} />
+                <Route path="help" element={<Help />} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
 );
 
 export const MountStorage = (selector: string) => {
-    ReactDOM.render(<Main />, document.getElementById(selector));
+    ReactDOM.createRoot(document.getElementById(selector)).render(<Main />);
 };
 
 export default Main;
