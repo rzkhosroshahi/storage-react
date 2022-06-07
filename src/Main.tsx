@@ -30,4 +30,8 @@ export const UnMountStorage = () => {
     Root.unmount();
 };
 
+export const boot = [
+    MountStorage,
+    UnMountStorage,
+];
 export default Main;

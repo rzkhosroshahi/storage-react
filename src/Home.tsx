@@ -14,7 +14,6 @@ export default () => {
             removeEventListener('changeRoute', handleNavigateFromHost);
         };
     }, []);
-    addEventListener('changeRoute', (e) => console.log('e>>', e));
 
     return (
         <div>
